@@ -103,6 +103,7 @@ void loop()
   digitalWrite(motorPin4, LOW);
   delay(motorSpeed);
 }*/
+/* 
 #include "TM1637.h"
 const int CLK = 17;
 const int DIO = 16;
@@ -115,5 +116,15 @@ void setup(){
    sevenSegment.clearDisplay(); 
 }
 void loop(){
+
+}*/
+
+void setup(){
+   pinMode(8,OUTPUT);
+   delay(800);
+   tone(8, 00,300); 
+}
+void loop()
+{
 
 }
