@@ -134,6 +134,7 @@ void loop()
 #define STEPPER_PIN_3 11
 #define STEPPER_PIN_4 12
 int step_number = 0;
+int CCWstep_number = 0;
 void setup() {
 pinMode(STEPPER_PIN_1, OUTPUT);
 pinMode(STEPPER_PIN_2, OUTPUT);
@@ -149,6 +150,52 @@ void loop() {
    {
        if(digitalRead(2) == 0)
     {
+     cw();
+    }
+    else 
+    {
+     digitalWrite(STEPPER_PIN_1, LOW);
+     digitalWrite(STEPPER_PIN_2, LOW);
+     digitalWrite(STEPPER_PIN_3, LOW);
+     digitalWrite(STEPPER_PIN_4, LOW);
+    }
+    step_number++;
+  }
+  if (step_number>=8) 
+  {  digitalWrite(STEPPER_PIN_1, LOW);
+     digitalWrite(STEPPER_PIN_2, HIGH);
+     digitalWrite(STEPPER_PIN_3, LOW);
+     digitalWrite(STEPPER_PIN_4, LOW);
+ 
+      digitalWrite(STEPPER_PIN_1, LOW);
+     digitalWrite(STEPPER_PIN_2, HIGH);
+     digitalWrite(STEPPER_PIN_3, LOW);
+     digitalWrite(STEPPER_PIN_4, LOW);
+ 
+      digitalWrite(STEPPER_PIN_1, LOW);
+    digitalWrite(STEPPER_PIN_2, HIGH);
+    digitalWrite(STEPPER_PIN_3, HIGH);
+    digitalWrite(STEPPER_PIN_4, LOW);
+   
+    digitalWrite(STEPPER_PIN_1, HIGH);
+    digitalWrite(STEPPER_PIN_2, LOW);
+    digitalWrite(STEPPER_PIN_3, LOW);
+    digitalWrite(STEPPER_PIN_4, LOW);
+
+     digitalWrite(STEPPER_PIN_1, HIGH);
+     digitalWrite(STEPPER_PIN_2, HIGH);
+     digitalWrite(STEPPER_PIN_3, LOW);
+     digitalWrite(STEPPER_PIN_4, LOW);  
+    CCWstep_number++;
+  }
+  if( CCWstep_number=8)
+  {
+   cw();    
+  }
+  
+}
+void cw()
+{
     digitalWrite(STEPPER_PIN_1, HIGH);
     digitalWrite(STEPPER_PIN_2, LOW);
     digitalWrite(STEPPER_PIN_3, LOW);
@@ -168,19 +215,4 @@ void loop() {
     digitalWrite(STEPPER_PIN_2, HIGH);
     digitalWrite(STEPPER_PIN_3, HIGH);
     digitalWrite(STEPPER_PIN_4, LOW);
-    }
-    else 
-    {
-     digitalWrite(STEPPER_PIN_1, LOW);
-     digitalWrite(STEPPER_PIN_2, LOW);
-     digitalWrite(STEPPER_PIN_3, LOW);
-     digitalWrite(STEPPER_PIN_4, LOW);
-    }
-    step_number++;
-  }
-  if (step_number==8) 
-  {
-    step_number=0;
-  }
-  
 }
