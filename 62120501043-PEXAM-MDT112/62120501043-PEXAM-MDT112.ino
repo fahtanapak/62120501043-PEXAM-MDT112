@@ -176,7 +176,7 @@ void loop() {
      digitalWrite(STEPPER_PIN_3, LOW);
      digitalWrite(STEPPER_PIN_4, LOW);
     }
-    //step_number++;
+    step_number++;
   }
   if (step_number==8) 
   {
