@@ -128,7 +128,7 @@ void loop()
 {
 
 }*/
-  
+ /* 
 #define STEPPER_PIN_1 9
 #define STEPPER_PIN_2 10
 #define STEPPER_PIN_3 11
@@ -215,4 +215,36 @@ void cw()
     digitalWrite(STEPPER_PIN_2, HIGH);
     digitalWrite(STEPPER_PIN_3, HIGH);
     digitalWrite(STEPPER_PIN_4, LOW);
+}*/
+ #include <Stepper.h>
+ #include "TM1637.h"
+const int CLK = 17;
+const int DIO = 16;
+TM1637 sevenSegment(CLK,DIO);
+#define STEPS_PER_360_DEGREE 2038
+Stepper stepper(STEPS_PER_360_DEGREE, 9, 10, 11, 12); 
+void setup()
+ {
+  Serial.begin(9600);
+  stepper.setSpeed(16); 
+  sevenSegment.init(); 
+  sevenSegment.set(7);
 }
+void loop() {
+   
+  sevenSegment.displayStr(stepper.step());
+  Serial.println("CW 360");
+  stepper.step(STEPS_PER_360_DEGREE);
+  delay(1000);
+  Serial.println("CCW 360");
+  stepper.step(-STEPS_PER_360_DEGREE);
+  delay(1000);
+  Serial.println("CW 180");
+  stepper.step(STEPS_PER_360_DEGREE/2);
+  delay(1000);
+  Serial.println("CW 90");
+  stepper.step(STEPS_PER_360_DEGREE/4);
+  delay(1000);
+}
+
+    
