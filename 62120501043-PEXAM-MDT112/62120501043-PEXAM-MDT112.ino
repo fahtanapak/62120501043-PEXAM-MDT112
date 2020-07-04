@@ -128,3 +128,59 @@ void loop()
 {
 
 }
+  /* 
+#define STEPPER_PIN_1 9
+#define STEPPER_PIN_2 10
+#define STEPPER_PIN_3 11
+#define STEPPER_PIN_4 12
+int step_number = 0;
+void setup() {
+pinMode(STEPPER_PIN_1, OUTPUT);
+pinMode(STEPPER_PIN_2, OUTPUT);
+pinMode(STEPPER_PIN_3, OUTPUT);
+pinMode(STEPPER_PIN_4, OUTPUT);
+pinMode(2,INPUT_PULLUP); 
+}
+
+void loop() {
+
+
+  if (digitalRead(2) == 1)
+   {
+       if(digitalRead(2) == 0)
+    {
+    digitalWrite(STEPPER_PIN_1, HIGH);
+    digitalWrite(STEPPER_PIN_2, LOW);
+    digitalWrite(STEPPER_PIN_3, LOW);
+    digitalWrite(STEPPER_PIN_4, LOW);
+
+     digitalWrite(STEPPER_PIN_1, HIGH);
+     digitalWrite(STEPPER_PIN_2, HIGH);
+     digitalWrite(STEPPER_PIN_3, LOW);
+     digitalWrite(STEPPER_PIN_4, LOW);
+
+     digitalWrite(STEPPER_PIN_1, LOW);
+     digitalWrite(STEPPER_PIN_2, HIGH);
+     digitalWrite(STEPPER_PIN_3, LOW);
+     digitalWrite(STEPPER_PIN_4, LOW);
+ 
+    digitalWrite(STEPPER_PIN_1, LOW);
+    digitalWrite(STEPPER_PIN_2, HIGH);
+    digitalWrite(STEPPER_PIN_3, HIGH);
+    digitalWrite(STEPPER_PIN_4, LOW);
+    }
+    else 
+    {
+     digitalWrite(STEPPER_PIN_1, LOW);
+     digitalWrite(STEPPER_PIN_2, LOW);
+     digitalWrite(STEPPER_PIN_3, LOW);
+     digitalWrite(STEPPER_PIN_4, LOW);
+    }
+    //step_number++;
+  }
+  if (step_number<=8) 
+  {
+    step_number=0;
+  }
+  
+}*/
