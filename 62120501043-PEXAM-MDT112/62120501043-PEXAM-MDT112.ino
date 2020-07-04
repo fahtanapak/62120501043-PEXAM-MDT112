@@ -118,7 +118,7 @@ void setup(){
 void loop(){
 
 }*/
-
+/* 
 void setup(){
    pinMode(8,OUTPUT);
    delay(800);
@@ -127,8 +127,8 @@ void setup(){
 void loop()
 {
 
-}
-  /* 
+}*/
+  
 #define STEPPER_PIN_1 9
 #define STEPPER_PIN_2 10
 #define STEPPER_PIN_3 11
@@ -183,4 +183,4 @@ void loop() {
     step_number=0;
   }
   
-}*/
+}
