@@ -178,7 +178,7 @@ void loop() {
     }
     //step_number++;
   }
-  if (step_number<=8) 
+  if (step_number==8) 
   {
     step_number=0;
   }
