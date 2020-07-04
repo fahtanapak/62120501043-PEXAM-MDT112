@@ -122,7 +122,7 @@ void loop(){
 void setup(){
    pinMode(8,OUTPUT);
    delay(800);
-   tone(8, 00,300); 
+   tone(8, 600,300); 
 }
 void loop()
 {
@@ -216,7 +216,7 @@ void cw()
     digitalWrite(STEPPER_PIN_3, HIGH);
     digitalWrite(STEPPER_PIN_4, LOW);
 }*/
- #include <Stepper.h>
+/*  #include <Stepper.h>
  #include "TM1637.h"
 const int CLK = 17;
 const int DIO = 16;
@@ -245,6 +245,20 @@ void loop() {
   Serial.println("CW 90");
   stepper.step(STEPS_PER_360_DEGREE/4);
   delay(1000);
+}*/
+void setup(){
+   pinMode(8,OUTPUT);
+   pinMode(2,INPUT_PULLUP);
+   delay(800);
+   tone(8, 00,300); 
+}
+void loop()
+{
+    
+       if(digitalRead(2) == 0)
+       {
+         tone(8, 800,800); 
+       }
 }
 
     
